@@ -1,4 +1,4 @@
-<%= content_tag :tr, class: ["line-through": video.watched? ] do %>
+<%= content_tag :tr, class: ["line-through": video.watched? ], id: dom_id(video) do %>
   <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
     <%= form_with model: [ video.collection, video ], data: { controller: "form" } do |form| %>
       <%= form.label :watched, class: "checkbox", for: dom_id(video, :watched) do %>
