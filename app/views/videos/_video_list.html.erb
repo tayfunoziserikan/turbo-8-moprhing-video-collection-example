@@ -1,0 +1,13 @@
+<table class="min-w-full divide-y divide-gray-300">
+  <thead>
+  <tr>
+    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0 w-[50px]">Watched?</th>
+    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Title</th>
+    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Tags</th>
+    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 w-[150px]">Actions</th>
+  </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-200">
+  <%= render partial: "videos/video", collection: videos, object: :video  %>
+  </tbody>
+</table>

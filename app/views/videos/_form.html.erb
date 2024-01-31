@@ -1,0 +1,9 @@
+<%= form_with(model: [collection, video]) do |form| %>
+  <%= render "form_errors", resource: video %>
+  <div class="flex justify-between items-center gap-5">
+    <%= form.text_field :title, placeholder: "title", class: "w-full h-12 block shadow rounded-md border border-gray-200 outline-none w-full" %>
+    <%= form.text_field :tags, placeholder: "tags", class: "w-full h-12 block shadow rounded-md border border-gray-200 outline-none w-full" %>
+    <%= form.text_area :embed_code, placeholder: "embed_code", class: "w-full h-12 block shadow rounded-md border border-gray-200 outline-none w-full" %>
+    <%= form.submit "Add Video", class: "w-full rounded-lg py-3 px-2 h-12 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

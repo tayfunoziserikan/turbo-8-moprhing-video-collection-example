@@ -1,0 +1,7 @@
+<%= content_tag :div, class:"fixed z-50 top-2 left-0 right-0 mx-auto w-fit grid justify-items-right", id: "flash_message" do %>
+  <div class="py-2 px-3 bg-gray-900 mb-5 text-white font-medium rounded-lg inline-block shadow-lg">
+    <% flash.each do |type, msg| %>
+      <%= type %>: <%= msg %>
+    <% end %>
+  </div>
+<% end if flash.any? %>
