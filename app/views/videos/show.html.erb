@@ -1,0 +1,21 @@
+<% content_for :video_details do %>
+  <div class="flex flex-col h-full bg-gray-100 rounded-md w-[600px] p-5">
+    <h1 class="text-2xl"><%= @video.title %></h1>
+    <hr/>
+    <div class="rounded-md overflow-hidden bg-white border-gray-300 mt-2 min-h-[315px]">
+      <%= @video.embed_code.html_safe %>
+    </div>
+    <div class="flex flex-col gap-5">
+      <p>
+        <%= video_tags_for(@video) %>
+      </p>
+      <p>
+        <span class="text-sm text-gray-600">last updated at <%= time_ago_in_words @video.updated_at %> ago</span>
+      </p>
+      <p>
+        <%= link_to "Back", collection_path(@collection), class: "rounded-lg py-3 px-5 bg-gray-200 font-small" %>
+      </p>
+    </div>
+  </div>
+<% end %>
+<%= render template: "collections/show" %>

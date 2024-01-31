@@ -1,0 +1,30 @@
+<div class="mx-auto w-full flex gap-5  px-2">
+  <div class="w-[400px] h-[250px] rounded-lg overflow-hidden flex justify-center items-center bg-gray-100">
+    <%= collection.cover_picture.attached? ?
+          image_tag(collection.cover_picture.variant(:large), class: "w-full") :
+          render("application/icons/blank") %>
+  </div>
+  <div class="flex-1 flex flex-col gap-2">
+    <div class="flex w-full justify-between">
+      <div>
+        <h1 class="text-3xl"><%= collection.title %></h1>
+        <h2 class="text-lg">Oluşturan: <%= collection.creator_name %></h2>
+      </div>
+      <div class="flex gap-2">
+        <%= link_to "Edit", edit_collection_path(collection), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 h-12 inline-block font-medium" %>
+        <%= button_to "Destroy", collection_path(collection), method: :delete, class: "mt-2 rounded-lg py-3 h-12 px-5 bg-red-100 font-medium" %>
+      </div>
+    </div>
+    <div class="flex flex-col w-full gap-2">
+      <p>
+        Total video: <%= collection.videos_count %>
+      </p>
+      <p>
+        Watched / unwatched video: <%= collection.videos.watched.count %> / <%= collection.videos.watched.count %>
+      </p>
+    </div>
+    <div class="flex justify-between w-full overflow-hidden rounded-md">
+      <%= collection_progress_bar_for(collection) %>
+    </div>
+  </div>
+</div>
