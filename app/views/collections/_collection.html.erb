@@ -1,4 +1,4 @@
-<%= link_to collection, id: dom_id(collection),
+<%= link_to collection, id: dom_id(collection), data: { turbo_frame: "_top" },
             class: "flex p-1 gap-2 bg-gray-50 border border-gray-200 items-center rounded-md" do %>
   <div class="w-[100px] h-[63px] rounded-md overflow-hidden flex justify-center items-center bg-gray-100">
     <%= collection.cover_picture.attached? ?

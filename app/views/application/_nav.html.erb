@@ -1,8 +1,16 @@
 <nav class="w-[300px] flex flex-col mx-auto p-5 bg-white divide-y divide-gray-200 shadow-md border border-gray-300 rounded-lg gap-2 divide-gray-200">
   <h1 class="text-2xl font-bold">🎥 Video Collections</h1>
-  <div class="flex gap-2 pt-2">
+  <div class="flex gap-2 pt-2 relative">
     <%= link_to render("application/icons/home"), root_path, class: "border flex items-center h-full bg-gray-600 px-2 border-gray-200 rounded-lg" %>
-    <%= link_to "New collection", new_collection_path, class: "rounded-lg w-full text-center py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <details>
+      <summary class="rounded-lg w-full text-center py-3 px-5 bg-blue-600 text-white block font-medium">New collection</summary>
+      <%= turbo_frame_tag :collection_list, src: new_collection_path, loading: :lazy, class: "bg-gray-50 shadow-md absolute p-5" do %>
+        Collections loading...
+      <% end %>
+    </details>
+
   </div>
-  <%= render template: "collections/index" %>
+  <%= turbo_frame_tag :collection_list, src: collections_path, loading: :lazy do %>
+    Collections loading...
+  <% end %>
 </nav>

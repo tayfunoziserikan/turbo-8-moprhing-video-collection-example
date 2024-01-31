@@ -25,6 +25,9 @@ class CollectionsController < ApplicationController
     respond_to do |format|
       if @collection.save
         format.html { redirect_to collection_url(@collection), notice: "Collection was successfully created." }
+        format.turbo_stream {
+          render turbo_stream: turbo_stream.append("collections", partial: "collections/collection", locals: { collection: @collection })
+        }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

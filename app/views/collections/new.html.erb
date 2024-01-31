@@ -1,3 +1,4 @@
 <h1 class="font-bold text-4xl">New collection</h1>
-
-<%= render "form", collection: @collection %>
+<%= turbo_frame_tag turbo_frame_request_id do %>
+  <%= render "form", collection: @collection %>
+<% end %>

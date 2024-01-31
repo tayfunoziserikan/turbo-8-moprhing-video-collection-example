@@ -1,3 +1,5 @@
-<div class="overflow-y-auto grid grid-cols-1 gap-2 py-2">
-  <%= render @collections  %>
-</div>
+<%= turbo_frame_tag turbo_frame_request_id do %>
+  <div class="overflow-y-auto grid grid-cols-1 gap-2 py-2" id="collections">
+    <%= render @collections  %>
+  </div>
+<% end %>

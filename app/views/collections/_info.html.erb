@@ -1,0 +1,13 @@
+<%= content_tag :div, id: dom_id(collection, :info) do %>
+  <div class="flex flex-col w-full gap-2">
+    <p>
+      Total video: <%= collection.videos_count %>
+    </p>
+    <p>
+      Watched / unwatched video: <%= collection.videos.watched.count %> / <%= collection.videos.watched.count %>
+    </p>
+  </div>
+  <div class="flex justify-between w-full overflow-hidden rounded-md">
+    <%= collection_progress_bar_for(collection) %>
+  </div>
+<% end %>
