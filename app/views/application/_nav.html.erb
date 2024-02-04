@@ -4,7 +4,7 @@
     <%= link_to render("application/icons/home"), root_path, class: "border flex items-center h-full bg-gray-600 px-2 border-gray-200 rounded-lg" %>
     <details data-controller="dialog">
       <summary class="rounded-lg w-full text-center py-3 px-5 bg-blue-600 text-white block font-medium">New collection</summary>
-      <%= turbo_frame_tag :collection_list, src: new_collection_path, loading: :lazy, class: "bg-gray-50 shadow-md absolute p-5" do %>
+      <%= turbo_frame_tag :new_collection, src: new_collection_path, loading: :lazy, class: "bg-gray-50 shadow-md absolute p-5" do %>
         Collections loading...
       <% end %>
     </details>
