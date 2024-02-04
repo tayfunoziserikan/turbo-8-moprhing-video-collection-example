@@ -33,7 +33,6 @@ class VideosController < ApplicationController
     respond_to do |format|
       if @video.update(video_params)
         format.html { redirect_to collection_url(@collection), notice: "Video was successfully updated." }
-        format.turbo_stream
       else
         format.html { redirect_to collection_url(@collection), error: "Video not updated." }
       end

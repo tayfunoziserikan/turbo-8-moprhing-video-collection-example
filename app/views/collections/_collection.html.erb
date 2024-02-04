@@ -6,10 +6,12 @@
           render("application/icons/blank") %>
   </div>
   <div class="w-full">
-    <span><%= truncate collection.title, length: 20 %></span>
+    <div class="flex justify-between">
+      <span><%= truncate collection.title, length: 20 %></span>
+      <span class="text-xs text-gray-500"><%= collection.videos.watched.count %> / <%= collection.videos.not_watched.count %></span>
+    </div>
     <div class="flex justify-between w-full overflow-hidden rounded-md">
       <%= collection_progress_bar_for(collection, height: 5) %>
     </div>
   </div>
 <% end %>
-<%= turbo_stream_from dom_id(collection, :card) %>

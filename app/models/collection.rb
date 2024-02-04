@@ -13,6 +13,9 @@ class Collection < ApplicationRecord
     attachable.variant :large, resize: "400x250"
   end
 
+  # Broadcasts
+  broadcasts_refreshes_to ->(stream) { stream.class.broadcast_target_default }
+
   # Scopes
   scope :most_collected, -> { order(videos_count: :desc) }
 

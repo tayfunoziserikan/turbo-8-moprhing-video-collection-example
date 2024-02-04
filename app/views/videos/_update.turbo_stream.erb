@@ -1,7 +1,0 @@
-<%= turbo_stream.replace dom_id(video) do %>
-  <%= render "videos/video", video: video %>
-<% end %>
-
-<%= turbo_stream.update dom_id(collection, :info) do %>
-  <%= render "collections/info", collection: collection %>
-<% end %>

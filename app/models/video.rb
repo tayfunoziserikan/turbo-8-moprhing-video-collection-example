@@ -9,12 +9,6 @@ class Video < ApplicationRecord
   validates :tags, presence: true
   validates :embed_code, presence: true
 
-  # Callbacks
-  after_update_commit :broadcast_update_later
-
-  private
-
-    def broadcast_update_later
-      broadcast_render_later_to collection, partial: "videos/update", locals: { video: self, collection: collection }
-    end
+  # Broadcasts
+  broadcasts_refreshes_to ->(stream) { stream.class.broadcast_target_default }
 end
