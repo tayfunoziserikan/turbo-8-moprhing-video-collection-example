@@ -1,0 +1,14 @@
+<div class="flex gap-5 h-full">
+  <div class="flex-col flex flex-1 gap-5 divide-y divide-gray-200">
+    <div class="flex w-full gap-2 divide-gray-200 divide-x">
+      <%= render partial: "collections/details", object: @collection, as: :collection %>
+    </div>
+    <div class="pt-5">
+      <%= render "videos/form", collection: @collection, video: Video.new %>
+    </div>
+    <div class="pt-5">
+      <%= render "videos/video_list", videos: @collection.videos %>
+    </div>
+  </div>
+  <%= content_for :video_details %>
+</div>

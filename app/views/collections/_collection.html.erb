@@ -1,0 +1,14 @@
+<%= link_to collection, id: dom_id(collection),
+            class: "flex p-1 gap-2 bg-gray-50 border border-gray-200 items-center rounded-md" do %>
+  <div class="w-[100px] h-[63px] rounded-md overflow-hidden flex justify-center items-center bg-gray-100">
+    <%= collection.cover_picture.attached? ?
+          image_tag(collection.cover_picture.variant(:small), class: "w-full") :
+          render("application/icons/blank") %>
+  </div>
+  <div class="w-full">
+    <span><%= truncate collection.title, length: 20 %></span>
+    <div class="flex justify-between w-full overflow-hidden rounded-md">
+      <%= collection_progress_bar_for(collection, height: 5) %>
+    </div>
+  </div>
+<% end %>
