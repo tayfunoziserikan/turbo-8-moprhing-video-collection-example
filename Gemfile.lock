@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 1c2529b9a6ba5a1eff58be0d0373d7d9d401015b
+  revision: bab4aa7cb25112846e04cea907361a1de0f126ef
   branch: main
   specs:
     actioncable (7.2.0.alpha)
@@ -69,7 +69,7 @@ GIT
       connection_pool (>= 2.2.5)
       drb
       i18n (>= 1.6, < 2)
-      minitest (>= 5.1)
+      minitest (>= 5.1, < 5.22.0)
       tzinfo (~> 2.0, >= 2.0.5)
     rails (7.2.0.alpha)
       actioncable (= 7.2.0.alpha)
@@ -136,7 +136,7 @@ GEM
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.7.2)
-    irb (1.11.1)
+    irb (1.11.2)
       rdoc
       reline (>= 0.4.2)
     jbuilder (2.11.5)
@@ -157,7 +157,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.21.2)
     msgpack (1.7.2)
-    net-imap (0.4.9.1)
+    net-imap (0.4.10)
       date
       net-protocol
     net-pop (0.1.2)
@@ -167,17 +167,17 @@ GEM
     net-smtp (0.4.0.1)
       net-protocol
     nio4r (2.7.0)
-    nokogiri (1.16.0-aarch64-linux)
+    nokogiri (1.16.2-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.16.0-arm-linux)
+    nokogiri (1.16.2-arm-linux)
       racc (~> 1.4)
-    nokogiri (1.16.0-arm64-darwin)
+    nokogiri (1.16.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.0-x86-linux)
+    nokogiri (1.16.2-x86-linux)
       racc (~> 1.4)
-    nokogiri (1.16.0-x86_64-darwin)
+    nokogiri (1.16.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.0-x86_64-linux)
+    nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     parallel (1.24.0)
     parser (3.3.0.5)
@@ -301,7 +301,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.12)
+    zeitwerk (2.6.13)
 
 PLATFORMS
   aarch64-linux
